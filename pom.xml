@@ -1,21 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>cn.dennishucd</groupId>
-  <artifactId>DJWeb</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>DJWeb Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>DJWeb</finalName>
-  </build>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- project self related configuration begin -->
+	<groupId>cn.dennishucd</groupId>
+	<artifactId>DJWeb</artifactId>
+	<version>0.1.0</version>
+	<packaging>war</packaging>
+	<name>DJWeb J2EE Project</name>
+	<url>http://maven.apache.org</url>
+	<!-- project self related configuration end -->
+
+	<!-- dedicate the source encoding as UTF-8 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- project dependencies configuration begin -->
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.1.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.5.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<!-- project dependencies configuration end -->
+
+	<build>
+		<plugins>
+			<!-- dedicate the source compile version as java 1.7 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<!-- Test -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+			<!-- Tomcat -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<path>/{project.artifactId}</path>
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>DJWeb</finalName>
+	</build>
 </project>
