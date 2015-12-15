@@ -19,4 +19,10 @@ public class CodeMsg {
 
 	public static final Integer NO_NEW_VERSION_CODE = 2001;
 	public static final String   NO_NEW_VERSION_MSG = "您的软件已经是最新版本了!";
+	
+	public static final Integer USER_NOT_EXIST_CODE = 3001;
+	public static final String   USER_NOT_EXIST_MSG = "用户不存在";
+	
+	public static final Integer PWD_MISMATCH_CODE = 3001;
+	public static final String   PWD_MISMATCH_MSG = "密码错误";
 }

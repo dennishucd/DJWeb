@@ -1,13 +1,15 @@
 package cn.dennishucd.djweb.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import cn.dennishucd.djweb.utils.CodeMsg;
+import cn.dennishucd.djweb.model.User;
+import cn.dennishucd.djweb.service.UserService;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 /**
@@ -19,14 +21,16 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 @Controller
 @RequestMapping(value="/user")
 public class UserController {
+	private final UserService userService;
+	
+	@Autowired
+	public UserController(UserService userService) {
+		this.userService = userService;
+	}
 
-	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody ObjectNode login() {
-		ObjectNode node = new ObjectMapper().createObjectNode();
+	@RequestMapping(value="/login", method = RequestMethod.POST)
+	public @ResponseBody ObjectNode login(@RequestBody User user) {
 		
-		node.put(CodeMsg.CODE, CodeMsg.SUCCESS_CODE);
-		node.put(CodeMsg.MSG, CodeMsg.SUCCESS_MSG);
-		
-		return node;
+		return userService.login(user);
 	}
 }

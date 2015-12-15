@@ -5,6 +5,18 @@
 	version="3.0">
 
 	<display-name>a j2ee reference project</display-name>
+	
+	<!--Spring ApplicationContext load -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<context-param>
+    	<param-name>contextConfigLocation</param-name>
+    	<param-value>
+    	classpath:app-context.xml
+    	</param-value>
+	</context-param>
 
 	<!--spring mvc configuration begin -->
 	<servlet>
