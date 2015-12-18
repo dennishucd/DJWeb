@@ -36,4 +36,15 @@ public class User {
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("id: "+id);
+		sb.append(", loginName: "+loginName);
+		sb.append(", passwd: "+passwd);
+		sb.append(", mobile: "+mobile);
+		
+		return sb.toString();
+	}
 }
