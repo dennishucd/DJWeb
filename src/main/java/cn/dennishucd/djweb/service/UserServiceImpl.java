@@ -1,6 +1,7 @@
 package cn.dennishucd.djweb.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
 import cn.dennishucd.djweb.dao.UserDao;
@@ -11,6 +12,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @Service
+/* @Transactional indicates that each method in this service should run within a transaction.
+ * Spring will commit the operation if the method is completed successfully
+ * and will rollback if any runtime exception occurs. 
+ */
+@Transactional  
 public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao userDao;
