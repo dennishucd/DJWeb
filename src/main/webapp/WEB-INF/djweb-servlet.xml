@@ -33,4 +33,10 @@
 		<property name="suffix" value=".vm" />
 	</bean>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="cn.dennishucd.djweb.utils.LogInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
