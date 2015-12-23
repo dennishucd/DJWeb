@@ -13,9 +13,11 @@
 	<url>http://maven.apache.org</url>
 	<!-- project self related configuration end -->
 
-	<!-- dedicate the source encoding as UTF-8 -->
 	<properties>
+		<!-- dedicate the source encoding as UTF-8 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<org.springframework.version>4.1.4.RELEASE</org.springframework.version>
 	</properties>
 
 	<!-- project dependencies configuration begin -->
@@ -59,22 +61,28 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>4.1.1.RELEASE</version>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<!-- for support velocity -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${org.springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>4.2.3.RELEASE</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
-			<version>4.1.1.RELEASE</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.1.1.RELEASE</version>
+			<version>${org.springframework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis</groupId>
