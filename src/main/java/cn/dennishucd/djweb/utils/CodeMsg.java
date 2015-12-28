@@ -25,4 +25,10 @@ public class CodeMsg {
 	
 	public static final Integer PWD_MISMATCH_CODE = 3001;
 	public static final String   PWD_MISMATCH_MSG = "密码错误";
+	
+	public static final Integer UPLOAD_FAILED_CODE = 3014;
+	public static final String UPLOAD_FAILED_MSG = "文件上传失败";
+	
+	public static final Integer FILE_EMPTY_CODE = 3015;
+	public static final String FILE_EMPTY_MSG = "文件为空";
 }

@@ -10,3 +10,5 @@ A J2EE reference project
 (1) add maven support velocity in pom.xml;
 (2) add config to -servlet.xml;
 (3) add resovler to -servlet.xml.
+(4) add cost time logging interceptor support
+
