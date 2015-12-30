@@ -1,4 +1,4 @@
-package cn.dennishucd.djweb.controller;
+package cn.dennishucd.djweb.api;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
