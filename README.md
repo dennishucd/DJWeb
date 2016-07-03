@@ -1,5 +1,5 @@
 # DJWeb
-A J2EE reference project
+A J2EE reference project(springmvc+json+mybatis+mysql)
 
 ##version history
 1. v0.1.0 a initial java web project based on maven;
